@@ -8,7 +8,12 @@ RSpec.describe Entity, type: :model do
       email: 'diego@mail.com',
       password: '123456'
     )
+    @group = Group.create(
+      user: @user,
+      name: 'Expenses in transportation'
+    )
     @entity = Entity.create(
+      group: @group,
       author: @user,
       name: 'Motorcicle Fuel 12 lt',
       amount: 250
@@ -30,6 +35,11 @@ RSpec.describe Entity, type: :model do
 
   it 'is not valid without an author' do
     @entity.author = nil
+    expect(@entity).to_not be_valid
+  end
+
+  it 'is not valid without a group' do
+    @entity.group = nil
     expect(@entity).to_not be_valid
   end
 end
