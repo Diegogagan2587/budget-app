@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
       password: '123456'
     )
   end
-  #then we proceed to test the user model
+  # then we proceed to test the user model
   it 'is valid with valid attributes' do
     expect(@user).to be_valid
   end
@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
   it 'is not valid with a duplicated email' do
     @user2 = User.create(
       name: 'Diego Lopez',
-      email: 'diego@mail.com',  
+      email: 'diego@mail.com',
       password: '123456'
     )
     expect(@user2).to_not be_valid
