@@ -1,0 +1,8 @@
+<div id="category-card" class="card">
+  <div class="card-body">
+    <img src="<%=category.icon%>">
+    <h5 class="card-title"><%= category.name %></h5>
+    <p class="card-text"><%= category.transactions_counter %></p>
+    <%= link_to 'View', category_path(category), class: 'btn btn-primary' %>
+  </div>
+</div>
