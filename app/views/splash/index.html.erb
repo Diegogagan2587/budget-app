@@ -1,5 +1,9 @@
 <div class="container flex flex-col gap-3 items-center">
-    <h1 class="text-5xl text-center">Budget app</h1>
+  <h1 class="text-5xl text-center">Budget app</h1>
+  <% if user_signed_in? %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+  <%else%>
     <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
     <%= link_to "Register", new_user_registration_path, class: "btn btn-primary" %>
-<div>
+  <% end %>
+  <div>
