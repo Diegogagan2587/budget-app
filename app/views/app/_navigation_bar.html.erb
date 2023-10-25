@@ -1,0 +1,45 @@
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<nav class="p-5 bg-blue-500 shadow md:flex md:items-center md:justify-between">
+  <div class="flex justify-between items-center">
+    <span class="text-2xl">
+      BudgetApp
+    </span>
+    <span class="text-3xl cursor-pointer md:hidden block">
+      <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+    </span>
+  </div>
+  <ul class="bg-blue-500 md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 
+             md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] 
+             transition-all ease-in duration-500">
+    <li class="mx-4 my-6 md:my-0">
+      <%= link_to "Home", root_path, class: "text-xl hover:text-cyan-500 duration-500" %>
+    </li>
+    <li class="mx-4 my-6 md:my-0">
+      <%= link_to "New transaction", root_path, class: "text-xl hover:text-cyan-500 duration-500" %>
+    </li>
+    <li class="mx-4 my-6 md:my-0">
+      <%= link_to "Transactions", root_path, class: "text-xl hover:text-cyan-500 duration-500" %>
+    </li>
+    <li class="mx-4 my-6 md:my-0">
+      <%= link_to "Categories", root_path, class: "text-xl hover:text-cyan-500 duration-500" %>
+    </li>
+    <li class="mx-4 my-6 md:my-0">
+      <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-xl hover:text-cyan-500 duration-500" %>
+    </li>
+  </ul>
+</nav>
+<script>
+  function Menu(e) {
+    let list = document.querySelector("ul");
+    if (e.name === "menu-outline") {
+      e.name = "close";
+      list.classList.add('top-[80px]');
+      list.classList.add('opacity-100');
+    } else {
+      e.name = "menu-outline";
+      list.classList.remove('top-[80px]');
+      list.classList.remove('opacity-100');
+    }
+  }
+</script>
