@@ -1,9 +1,10 @@
 <div id="category-card" class="card">
   <div class="card-body">
-    <a href="<%=group_entities_path(category)%>">
-      <img src="<%=category.icon%>">
+    <a href="<%=group_path(category)%>">
+      <img class="stroke-2" src="<%=category.icon%>">
       <h5 class="card-title"><%= category.name %></h5>
-      <p class="card-text"><%= category.transactions_counter %></p>
+      <p class="card-text">transactions: <%= category.transactions_counter %></p>
+      <p class="card-text">Total amount: <%=total_amount%></p>
     </a>
   </div>
 </div>

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: 'groups#index'
   resources :users
   resources :splash, only: [:index]
-  resources :groups do
-    resources :entities
-  end
+  resources :entities
+  resources :groups
 end

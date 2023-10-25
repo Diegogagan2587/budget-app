@@ -1,3 +1,4 @@
 <% @categories.each do |category| %>
-  <%= render partial: 'app/category_card', locals: { category: category } %>
+  <% @total_amount = category.entities.sum(:amount) %>
+  <%= render partial: 'app/category_card', locals: { category: category, total_amount: @total_amount } %>
 <% end %>
