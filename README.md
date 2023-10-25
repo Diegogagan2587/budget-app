@@ -88,6 +88,8 @@ For more information on the importance of a professional README for your reposit
   <ul>
     <li><a href="https://expressjs.com/">Express.js</a></li>
     <li><a href="https://github.com/rails/tailwindcss-rails">tailwindcss-rails</a></li>
+    <li><a href="https://github.com/heartcombo/devise">Devise (for authentication)</a></li>
+    
   </ul>
 </details>
 
