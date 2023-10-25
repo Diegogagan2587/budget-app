@@ -80,6 +80,7 @@ For more information on the importance of a professional README for your reposit
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
     <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+    <li><a href="https://ionic.io/ionicons">Icons: ionicons</a></li>
   </ul>
 </details>
 
