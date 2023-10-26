@@ -1,1 +1,13 @@
 Placeholder for the new group form.
+<%= form_with( model:@group, url: { action:"create" }, html: { class: 'new-group' } ) do |f|%>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :icon %>
+    <%= f.text_field :icon%>
+  </div>
+  <%= link_to '❮', groups_path, class: 'btn btn-danger'%>
+  <%= f.submit "Save", calss:'btn'  %>
+<%end%>
