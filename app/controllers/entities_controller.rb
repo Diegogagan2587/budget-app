@@ -13,20 +13,22 @@ class EntitiesController < ApplicationController
   def create
     @entity = Entity.new(entity_params)
     @entity.author = current_user
-    format.html do
-      if @entity.save
-        redirect_to entities_path
-      else
-        render :new
+    respond_to do |format|
+      format.html do
+        if @entity.save
+          flash[:success] = 'Transaction was successfully created.'
+          redirect_to group_path(@entity.group_id)
+        else
+          flash.now[:error] = 'Transaction could not be created.'
+          render :new
+        end
       end
     end
-
-    redirect_to entities_path
   end
 
   private
 
   def entity_params
-    params.require(:entity).permit(:name, :amount)
+    params.require(:entity).permit(:name, :amount, :group_id)
   end
 end
