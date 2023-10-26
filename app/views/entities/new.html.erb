@@ -13,6 +13,6 @@ here you should be able to create a new component
         <%= f.label :group_id %>
         <%= f.collection_select :group_id, Group.all, :id, :name %>
     </div>
-    <%= link_to '❮', entities_path, class: 'btn btn-danger' %>
+    <%= link_to '❮', :back, class: 'btn btn-danger' %> 
     <%= f.submit "Save", calss: 'btn' %>
 <%end%>
