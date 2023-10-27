@@ -1,5 +1,9 @@
-This will display Entiteis for each group
-<%# go back button %>
-<%= link_to 'Back', groups_path %>
-<%# Link_to new entity %>
-<%= link_to 'New Transaction', new_entity_path %>
+<div class="container flex flex-col">
+  <h1>Transactions</h1>
+  <p>Total Amount $ [Pending to Implement]</p>
+  <% @transactions.each do |transaction| %>
+    <%= render 'app/transaction_card', transaction: transaction %>
+  <%end%>
+  <%= link_to 'Back', groups_path %>
+  <%= link_to 'New Transaction', new_entity_path %>
+</div>
