@@ -1,16 +1,24 @@
-<div class="container flex flex-col">
-  <h1>Transactions</h1>
-  <%# We summ each transaction.amount and get the result in below %>
-  <%total_amount = 0  %>
-  <% @transactions.each do |transaction| %>
-    <%total_amount += transaction.amount%>
-  <%end%>
-  <p>Total Amount $<%=total_amount%></p>
-  <ul class="flex flex-col gap-3">
+<div class="flex flex-col w-full">
+  <div class="container px-5 flex flex-col gap-5">
+    <%# We summ each transaction.amount and get the result in below %>
+    <%total_amount = 0  %>
     <% @transactions.each do |transaction| %>
-      <%= render 'app/transaction_card', transaction: transaction, icon: @icon %>
+      <%total_amount += transaction.amount%>
     <%end%>
-  </ul>
-  <%= link_to 'Back', groups_path %>
-  <%= link_to 'New Transaction', new_entity_path %>
+    <%= render partial: 'app/category_card', locals: { category: @category, total_amount: total_amount } %>
+    <hr>
+    <ul class="flex flex-col gap-3 min-h-[49vh]">
+      <% @transactions.each do |transaction| %>
+        <%= render 'app/transaction_card', transaction: transaction, icon: @icon %>
+      <%end%>
+    </ul>
+  </div>
+  <div class="container bg-green-200  w-full flex place-self-center bottom-0 flex-col p-2">
+    <%= link_to groups_path, class: "flex border  justify-center" do %>
+      <p class="text-2xl border">Back</p>
+    <%end%>
+    <%= link_to new_entity_path, class: "flex border  justify-center p-2" do %>
+      <p class="text-2xl">New Transaction</p>
+    <%end%>
+  </div>
 </div>

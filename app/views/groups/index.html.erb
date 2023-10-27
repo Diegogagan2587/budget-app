@@ -1,4 +1,4 @@
-<div class="container flex flex-col gap-3">
+<div class="container px-5 flex flex-col gap-3">
   <% @categories.each do |category| %>
     <% @total_amount = category.entities.sum(:amount) %>
     <%= render partial: 'app/category_card', locals: { category: category, total_amount: @total_amount } %>
