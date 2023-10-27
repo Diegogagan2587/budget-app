@@ -4,7 +4,10 @@ class GroupsController < ApplicationController
     @categories = current_user.groups
   end
 
-  def show; end
+  def show
+    @category = Group.find(params[:id])
+    @transactions = @category.entities.order('created_at DESC')
+  end
 
   def new
     @group = Group.new(
