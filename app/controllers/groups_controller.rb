@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
     @category = Group.find(params[:id])
     @transactions = @category.entities.order('created_at DESC')
     @icon = @category.icon
-    @current_section = "Transactions: #{@category.name}"
+    @current_section = 'Transactions'
   end
 
   def new
