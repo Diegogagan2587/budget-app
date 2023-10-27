@@ -1,18 +1,23 @@
-here you should be able to create a new component
-<%= form_with(model: @entity, url: { action: "create" }, html: { class: 'new-transaction' }) do |f| %>
-    <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+<div class="container border p-2 shadow">
+  <%= form_with(model: @entity, url: { action: "create" }, html: { class: 'new-transaction flex flex-col' }) do |f| %>
+    <div class="flex">
+      <%= f.label :group_id, class: "hidden" %>
+      <%= f.collection_select :group_id, Group.all, :id, :name, prompt: "Select a Category"%>
     </div>
+    <hr>
     <div>
-        <%= f.label :amount %>
-        <%= f.text_field :amount %>
+      <%= f.label :name, class: "hidden"  %>
+      <%= f.text_field :name, placeholder: 'Name', class: "border-none"%>
     </div>
-    <%# bellow we add a drop down list for all existing Groups %>
+    <hr>
     <div>
-        <%= f.label :group_id %>
-        <%= f.collection_select :group_id, Group.all, :id, :name %>
+      <%= f.label :amount, class: "hidden" %>
+      <%= f.text_field :amount,placeholder: 'amount $' ,class: "border-none" %>
     </div>
-    <%= link_to '❮', :back, class: 'btn btn-danger' %> 
-    <%= f.submit "Save", calss: 'btn' %>
-<%end%>
+    <hr>
+    <div class="container flex justify-between">
+      <%= link_to '❮', :back, class: 'btn btn-danger' %>
+      <%= f.submit "Save", calss: 'btn' %>
+    </div>
+  <%end%>
+</div>
