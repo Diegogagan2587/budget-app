@@ -1,5 +1,7 @@
-<% @categories.each do |category| %>
-  <% @total_amount = category.entities.sum(:amount) %>
-  <%= render partial: 'app/category_card', locals: { category: category, total_amount: @total_amount } %>
-<% end %>
-<%= link_to 'New Group', new_group_path %>
+<div class="container flex flex-col">
+  <% @categories.each do |category| %>
+    <% @total_amount = category.entities.sum(:amount) %>
+    <%= render partial: 'app/category_card', locals: { category: category, total_amount: @total_amount } %>
+  <% end %>
+  <%= link_to 'New Group', new_group_path %>
+</div>
