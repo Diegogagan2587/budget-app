@@ -1,0 +1,18 @@
+here you should be able to create a new component
+<%= form_with(model: @entity, url: { action: "create" }, html: { class: 'new-transaction' }) do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :amount %>
+        <%= f.text_field :amount %>
+    </div>
+    <%# bellow we add a drop down list for all existing Groups %>
+    <div>
+        <%= f.label :group_id %>
+        <%= f.collection_select :group_id, Group.all, :id, :name %>
+    </div>
+    <%= link_to '❮', :back, class: 'btn btn-danger' %> 
+    <%= f.submit "Save", calss: 'btn' %>
+<%end%>

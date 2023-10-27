@@ -1,0 +1,14 @@
+<div class="container flex flex-col">
+  <h1>Transactions</h1>
+  <%# We summ each transaction.amount and get the result in below %>
+  <%total_amount = 0  %>
+    <% @transactions.each do |transaction| %>
+        <%total_amount += transaction.amount%>
+    <%end%>
+  <p>Total Amount $<%=total_amount%></p>
+  <% @transactions.each do |transaction| %>
+    <%= render 'app/transaction_card', transaction: transaction, icon: @icon %>
+  <%end%>
+  <%= link_to 'Back', groups_path %>
+  <%= link_to 'New Transaction', new_entity_path %>
+</div>

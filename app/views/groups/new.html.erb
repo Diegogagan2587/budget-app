@@ -1,0 +1,17 @@
+<%= form_with( model:@group, url: { action:"create" }, html: { class: 'new-group' } ) do |f|%>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :icon, "Select Icons" %>
+    <% @icons.each do | icon |%>
+      <div>
+        <%= f.radio_button :icon, icon %>
+        <ion-icon name="<%=icon%>"></ion-icon>
+      </div>
+    <%end%>
+  </div>
+  <%= link_to '❮', groups_path, class: 'btn btn-danger'%>
+  <%= f.submit "Save", calss:'btn'  %>
+<%end%>

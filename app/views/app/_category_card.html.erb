@@ -1,0 +1,10 @@
+<div id="category-card" class="card">
+  <div class="card-body">
+    <a href="<%=group_path(category)%>">
+      <ion-icon name="<%=category.icon%>"></ion-icon>
+      <h5 class="card-title"><%= category.name %></h5>
+      <p class="card-text">transactions: <%= category.transactions_counter %></p>
+      <p class="card-text">Total amount: <%=total_amount%></p>
+    </a>
+  </div>
+</div>
