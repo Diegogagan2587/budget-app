@@ -5,10 +5,10 @@
     <span class="text-3xl cursor-pointer md:hidden block">
       <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
     </span>
-    <span class="text-2xl md:text-xs ">
+    <span class="text-2xl md:text-xs font-bold">
       <%=current_section%>
     </span>
-    <span class="text-xs ">
+    <span class="text-xs font-montserrat font-light">
       <a href="<%=root_path%>">
         BudgetApp
       </a>
@@ -16,7 +16,7 @@
   </div>
   <ul class="bg-[#3778c2]  md:flex md:items-center z-[1] md:z-auto md:static absolute w-full left-0 
              md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] 
-             transition-all ease-in duration-500">
+             transition-all ease-in duration-500 font-bold">
     <li class="mx-4 my-6 md:my-0">
       <%= link_to "New transaction", new_entity_path, class: "text-xl hover:text-cyan-500 duration-500" %>
     </li>
