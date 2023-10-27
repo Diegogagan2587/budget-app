@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action { redirect_to splash_index_path unless user_signed_in? }
   def index
+    @current_section = 'Categories'
     @categories = current_user.groups
   end
 
@@ -8,6 +9,7 @@ class GroupsController < ApplicationController
     @category = Group.find(params[:id])
     @transactions = @category.entities.order('created_at DESC')
     @icon = @category.icon
+    @current_section = "Transactions: #{@category.name}"
   end
 
   def new
