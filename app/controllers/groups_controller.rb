@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
   end
 
   def new
+    @current_section = 'New Category'
     @icons = %w[
       heart
       bicycle-outline

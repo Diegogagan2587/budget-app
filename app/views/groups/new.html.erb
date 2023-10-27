@@ -1,17 +1,25 @@
-<%= form_with( model:@group, url: { action:"create" }, html: { class: 'new-group' } ) do |f|%>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :icon, "Select Icons" %>
-    <% @icons.each do | icon |%>
-      <div>
-        <%= f.radio_button :icon, icon %>
-        <ion-icon name="<%=icon%>"></ion-icon>
+<div class="container border p-2 shadow">
+  <%= form_with( model:@group, url: { action:"create" }, html: { class: 'new-group' } ) do |f|%>
+    <div>
+      <%= f.label :name, class: "hidden"%>
+      <%= f.text_field :name, placeholder: "Category name", class: "border-none" %>
+    </div>
+    <hr>
+    <div class="p-3 flex flex-col gap-3">
+      <%= f.label :icon, "Select an icon"%>
+      <div class="flex flex-wrap justify-between">
+        <% @icons.each do | icon |%>
+          <div class="border rounded p-3 flex flex-col gap-2">
+            <ion-icon name="<%=icon%>"></ion-icon>
+            <%= f.radio_button :icon, icon %>
+          </div>
+        <%end%>
       </div>
-    <%end%>
-  </div>
-  <%= link_to '❮', groups_path, class: 'btn btn-danger'%>
-  <%= f.submit "Save", calss:'btn'  %>
-<%end%>
+    </div>
+    <hr>
+    <div class=" container flex justify-between">
+      <%= link_to '❮', groups_path, class: 'btn btn-danger'%>
+      <%= f.submit "Save", calss:'btn'  %>
+    </div>
+  <%end%>
+</div>
