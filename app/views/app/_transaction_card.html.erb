@@ -1,9 +1,12 @@
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-<div class="container flex flex-col border">
-  <ion-icon name="<%=icon%>"></ion-icon>
-  <p><%=transaction.name%></p>
-  <p><%=transaction.amount%></p>
-  <p><%=transaction.created_at%></p>
+<div class="container flex border rounded p-2 justify-between">
+  <div class="flex gap-3 items-center">
+    <ion-icon name="<%=icon%>" class="text-6xl"></ion-icon>
+    <div>
+      <p><%=transaction.name%></p>
+      <p><%=transaction.created_at%></p>
+    </div>
+  </div>
+  <div class="flex w-/4 items-center gap-1">
+    <span>$</span><span><%=transaction.amount%></span>
+  </div>
 </div>
