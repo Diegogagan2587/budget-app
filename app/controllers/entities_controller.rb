@@ -1,5 +1,8 @@
 class EntitiesController < ApplicationController
   before_action :authenticate_user!
+  def index
+    @entities = current_user.entities
+  end
   def new
     @current_section = 'New Transaction'
     @user = current_user

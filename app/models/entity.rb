@@ -5,8 +5,6 @@ class Entity < ApplicationRecord
   validates :amount, presence: true
   validates :author, presence: true
   after_save :update_group_transactions_counter
-  def index
-  end
 
   def update_group_transactions_counter
     group.update(transactions_counter: group.entities.count)
