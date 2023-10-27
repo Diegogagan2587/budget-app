@@ -7,9 +7,18 @@ class GroupsController < ApplicationController
   def show
     @category = Group.find(params[:id])
     @transactions = @category.entities.order('created_at DESC')
+    @icon = @category.icon
   end
 
   def new
+    @icons = %w[
+      heart
+      bicycle-outline
+      business-outline
+      card-outline
+      fast-food-outline
+      shirt-outline
+    ]
     @group = Group.new(
       user: current_user
     )
