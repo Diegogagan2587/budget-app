@@ -9,11 +9,11 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body>
+  <body class="bg-slate-100 min-h-screen w-full">
     <header>
       <%= render "app/navigation_bar", current_section: @current_section %>
     </header>
-    <main class="container mx-auto mt-14 flex">
+    <main class="mx-auto mb-0 flex flex-col h-full w-full">
       <%= yield %>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
