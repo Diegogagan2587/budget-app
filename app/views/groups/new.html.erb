@@ -4,8 +4,13 @@
     <%= f.text_field :name %>
   </div>
   <div>
-    <%= f.label :icon %>
-    <%= f.text_field :icon%>
+    <%= f.label :icon, "Select Icons" %>
+    <% @icons.each do | icon |%>
+      <div>
+        <%= f.radio_button :icon, icon %>
+        <ion-icon name="<%=icon%>"></ion-icon>
+      </div>
+    <%end%>
   </div>
   <%= link_to '❮', groups_path, class: 'btn btn-danger'%>
   <%= f.submit "Save", calss:'btn'  %>
