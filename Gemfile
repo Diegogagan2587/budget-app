@@ -70,3 +70,5 @@ gem 'devise', '~> 4.9'
 gem 'tailwindcss-rails', '~> 2.0'
 
 gem 'rails-controller-testing', '~> 1.0'
+
+gem "selenium-webdriver", "~> 4.14"
