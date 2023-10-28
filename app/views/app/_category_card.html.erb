@@ -1,8 +1,17 @@
-<div id="category-card" class="card">
-  <div class="card-body">
-    <img src="<%=category.icon%>">
-    <h5 class="card-title"><%= category.name %></h5>
-    <p class="card-text"><%= category.transactions_counter %></p>
-    <%= link_to 'View', category_path(category), class: 'btn btn-primary' %>
-  </div>
+<div id="category-card" class="border rounded p-2 bg-white w-full">
+  <a href="<%=group_path(category)%>">
+    <div class="container flex justify-between">
+      <div class="flex gap-3 items-center">
+        <ion-icon name="<%=category.icon%>" class="text-6xl"></ion-icon>
+        <div class="card-body">
+          <h5 class="card-title text-slate-500 font-bold"><%= category.name %></h5>
+          <p class="card-text text-slate-400">transactions: <%= category.transactions_counter %></p>
+        </div>
+      </div>
+      <div class="flex w-1/4 items-center">
+        <p class="card-text">Total: $</p>
+        <span><%=total_amount%></span>
+      </div>
+    </div>
+  </a>
 </div>

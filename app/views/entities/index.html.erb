@@ -1,0 +1,9 @@
+<% total_amount = @entities.sum(:amount) %>
+<div class="container shadow flex justify-center p-2 bg-white">
+  <h3 class="mx-auto font-bold">Total amount: $ <%= total_amount %></h3>
+</div>
+<div class="px-5 pt-10 flex flex-col gap-5">
+  <% @entities.each do |entity| %>
+    <%= render partial: "app/transaction_card", locals: { transaction: entity, icon:entity.group.icon } %>
+  <% end %>
+</div>

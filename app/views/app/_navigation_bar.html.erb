@@ -1,28 +1,33 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<nav class="p-5 bg-blue-500 shadow md:flex md:items-center md:justify-between">
-  <div class="flex justify-between items-center">
-    <span class="text-2xl">
-      BudgetApp
-    </span>
+<nav class="p-5 bg-[#3778c2] text-white shadow md:flex md:flex-col md:items-center md:justify-between">
+  <div class="flex md:flex-row-reverse justify-between items-center md:gap-5">
     <span class="text-3xl cursor-pointer md:hidden block">
       <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
     </span>
+    <span class="text-2xl md:text-xs font-bold">
+      <%=current_section%>
+    </span>
+    <span class="text-xs font-montserrat font-light">
+      <a href="<%=root_path%>">
+        BudgetApp
+      </a>
+    </span>
   </div>
-  <ul class="bg-blue-500 md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 
+  <ul class="bg-[#3778c2]  md:flex md:items-center z-[1] md:z-auto md:static absolute w-full left-0 
              md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] 
-             transition-all ease-in duration-500">
+             transition-all ease-in duration-500 font-bold">
     <li class="mx-4 my-6 md:my-0">
-      <%= link_to "Home", root_path, class: "text-xl hover:text-cyan-500 duration-500" %>
+      <%= link_to "New transaction", new_entity_path, class: "text-xl hover:text-cyan-500 duration-500" %>
     </li>
     <li class="mx-4 my-6 md:my-0">
-      <%= link_to "New transaction", root_path, class: "text-xl hover:text-cyan-500 duration-500" %>
-    </li>
-    <li class="mx-4 my-6 md:my-0">
-      <%= link_to "Transactions", root_path, class: "text-xl hover:text-cyan-500 duration-500" %>
+      <%= link_to "New category", new_group_path, class: "text-xl hover:text-cyan-500 duration-500" %>
     </li>
     <li class="mx-4 my-6 md:my-0">
       <%= link_to "Categories", root_path, class: "text-xl hover:text-cyan-500 duration-500" %>
+    </li>
+    <li class="mx-4 my-6 md:my-0">
+      <%= link_to "Transactions", entities_path, class: "text-xl hover:text-cyan-500 duration-500" %>
     </li>
     <li class="mx-4 my-6 md:my-0">
       <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-xl hover:text-cyan-500 duration-500" %>

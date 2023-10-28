@@ -1,9 +1,11 @@
-<div class="container flex flex-col gap-3 items-center">
+<div class="container flex flex-col gap-3 items-center px-5">
   <h1 class="text-5xl text-center">Budget app</h1>
   <% if user_signed_in? %>
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
   <%else%>
-    <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
-    <%= link_to "Register", new_user_registration_path, class: "btn btn-primary" %>
+    <div class="flex gap-5 justify-center mt-5 p-5  w-full">
+      <%= link_to "Login", new_user_session_path, class: "btn hover:border hover:shadow hover:bg-slate-200 p-1 flex-1 text-center" %>
+      <%= link_to "Register", new_user_registration_path, class: "btn hover:border hover:shadow hover:bg-slate-200 p-1 flex-1 text-center" %>
+    </div>
   <% end %>
   <div>

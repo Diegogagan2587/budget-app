@@ -1,0 +1,12 @@
+<div class=" flex border rounded p-2 justify-between bg-white w-full">
+  <div class="flex gap-3 items-center">
+    <ion-icon name="<%=icon%>" class="text-6xl"></ion-icon>
+    <div>
+      <p class="card-title text-slate-600 font-bold"><%=transaction.name%></p>
+      <p class="card-text text-slate-400"><%=transaction.created_at%></p>
+    </div>
+  </div>
+  <div class="flex w-/4 items-center gap-1">
+    <span>$</span><span><%=transaction.amount%></span>
+  </div>
+</div>
