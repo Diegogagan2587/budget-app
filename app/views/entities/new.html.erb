@@ -1,18 +1,26 @@
-here you should be able to create a new component
-<%= form_with(model: @entity, url: { action: "create" }, html: { class: 'new-transaction' }) do |f| %>
-    <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+<div class="px-5 w-full mt-10">
+  <div class="container border p-2 shadow bg-white">
+  <%= form_with(model: @entity, url: { action: "create" }, html: { class: 'new-transaction flex flex-col text-slate-600' }) do |f| %>
+    <div class="flex">
+      <%= f.label :group_id, class: "hidden" %>
+      <%= f.collection_select :group_id, Group.all, :id, :name, prompt: "Select a Category"%>
     </div>
+    <hr>
     <div>
-        <%= f.label :amount %>
-        <%= f.text_field :amount %>
+      <%= f.label :name, class: "hidden"  %>
+      <%= f.text_field :name, placeholder: 'Name', class: "border-none w-full"%>
     </div>
-    <%# bellow we add a drop down list for all existing Groups %>
+    <hr>
     <div>
-        <%= f.label :group_id %>
-        <%= f.collection_select :group_id, Group.all, :id, :name %>
+      <%= f.label :amount, class: "hidden" %>
+      <%= f.text_field :amount,placeholder: 'amount $' ,class: "border-none w-full" %>
     </div>
-    <%= link_to '❮', entities_path, class: 'btn btn-danger' %>
-    <%= f.submit "Save", calss: 'btn' %>
-<%end%>
+    <hr>
+    <div class=" container flex justify-between text-slate-600 px-4">
+      <%= link_to '❮', :back, class: 'btn hover:text-black' %>
+      <%= f.submit "Save", class: 'btn hover:text-black font-bold' %>
+    </div>
+  <%end%>
+</div>
+</div>
+

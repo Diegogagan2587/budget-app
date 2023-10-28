@@ -1,6 +1,12 @@
 class EntitiesController < ApplicationController
   before_action :authenticate_user!
+  def index
+    @current_section = 'Transactions'
+    @entities = Entity.all.where(author_id: current_user.id)
+  end
+
   def new
+    @current_section = 'New Transaction'
     @user = current_user
     @entity = Entity.new(author: @user)
     respond_to do |format|
