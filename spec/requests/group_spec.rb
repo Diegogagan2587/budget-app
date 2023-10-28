@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Group, type: :request do
+RSpec.describe GroupsController, type: :request do
   # we include devise authenticaton helpers in next line
   include Warden::Test::Helpers
   before(:each) do
