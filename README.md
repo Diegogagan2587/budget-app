@@ -101,6 +101,14 @@ For more information on the importance of a professional README for your reposit
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
+<details>
+<summary>Test</summary>
+  <ul>
+    <li><a href="https://rspec.info/">RSpec</a></li>
+    <li><a href="https://github.com/teamcapybara/capybara">Capybara</a></li>
+    <li><a href="https://www.selenium.dev/documentation/webdriver/">selenium-webdriver</a></li>
+  </ul>
+</details>
 
 <!-- Features -->
 
