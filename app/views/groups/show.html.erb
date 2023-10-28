@@ -1,0 +1,23 @@
+    <%total_amount = 0  %>
+<% @transactions.each do |transaction| %>
+  <%total_amount += transaction.amount%>
+<%end%>
+<%= render partial: 'app/category_card', locals: { category: @category, total_amount: total_amount } %>
+<hr>
+<div class="container flex flex-col w-full mt-10 px-5">
+  <div class="container px-5 flex flex-col gap-5 min-h-[45vh]">
+    <ul class="flex flex-col gap-3 ">
+      <% @transactions.each do |transaction| %>
+        <%= render 'app/transaction_card', transaction: transaction, icon: @icon %>
+      <%end%>
+    </ul>
+  </div>
+</div>
+  <div class="container w-full flex place-self-center bottom-0 flex-col ">
+    <%= link_to groups_path, class:"border bg-[#5fb523] text-white p-3 mt-10" do %>
+      <span class="border w-full flex justify-center p-2">Back</span>
+    <%end%>
+    <%= link_to new_entity_path, class:"border bg-[#5fb523] text-white p-3 mt-1" do %>
+      <span class="border w-full flex justify-center p-2">New Transaction</span>
+    <%end%>
+  </div>

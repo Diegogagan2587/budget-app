@@ -1,0 +1,9 @@
+<div class="container px-5 flex flex-col gap-3 mt-10">
+  <% @categories.each do |category| %>
+    <% @total_amount = category.entities.sum(:amount) %>
+    <%= render partial: 'app/category_card', locals: { category: category, total_amount: @total_amount } %>
+  <% end %>
+</div>
+  <%= link_to new_group_path, class:"border bg-[#5fb523] text-white p-3 mt-10" do %>
+    <span class="border w-full flex justify-center p-2">New Category</span>
+  <%end%>
