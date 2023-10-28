@@ -11,7 +11,5 @@ RSpec.describe SplashController, type: :request do
       get '/splash'
       expect(response).to render_template(:index)
     end
-
   end
-
 end
