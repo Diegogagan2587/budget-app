@@ -75,7 +75,7 @@ RSpec.describe 'Home page', type: :system do
     fill_in 'Password', with: @user.password
     click_on 'Log in'
     click_on 'Expenses in transportation'
-#    sleep 200
+    #    sleep 200
     expect(page).to have_current_path(group_path(@category_one))
   end
 
@@ -86,7 +86,7 @@ RSpec.describe 'Home page', type: :system do
     fill_in 'Password', with: @user.password
     click_on 'Log in'
     click_on 'New Category'
-    #The we check that we are redirected to the new category page
+    # The we check that we are redirected to the new category page
     expect(page).to have_current_path(new_group_path)
   end
 end
