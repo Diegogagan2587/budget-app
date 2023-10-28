@@ -7,7 +7,7 @@ RSpec.describe 'Authentication and Registration', type: :system do
   end
 
   context 'when user does not have an account' do
-    it 'Should register a new user' do
+    it 'Should register a new user with name, email and password' do
       visit root_path
       click_on 'Register'
       fill_in 'Email', with: 'diego2@mail.com'
@@ -20,7 +20,7 @@ RSpec.describe 'Authentication and Registration', type: :system do
       expect(page).to have_content('Welcome! You have signed up successfully')
     end
     context 'when user has an account' do
-      it 'Should login a user' do
+      it 'Should login using email and passwordclear' do
         visit root_path
         click_on 'Login'
         fill_in 'Email', with: @user.email
