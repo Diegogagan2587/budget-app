@@ -4,6 +4,7 @@ class EntitiesController < ApplicationController
     @current_section = 'Transactions'
     @entities = Entity.all.where(author_id: current_user.id)
   end
+
   def new
     @current_section = 'New Transaction'
     @user = current_user
