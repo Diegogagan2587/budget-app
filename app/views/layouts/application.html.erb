@@ -15,6 +15,8 @@
   <body class="bg-slate-100 min-h-screen w-full font-montserrat">
     <header>
       <%= render "app/navigation_bar", current_section: @current_section %>
+      <p class="notice text-center text-red-900"><%= notice %></p>
+      <p class="alert text-center text-red-900"><%= alert %></p>
     </header>
     <main class="mx-auto mb-0 flex flex-col h-full w-full">
       <%= yield %>
