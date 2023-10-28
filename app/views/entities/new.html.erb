@@ -1,0 +1,26 @@
+<div class="px-5 w-full mt-10">
+  <div class="container border p-2 shadow bg-white">
+  <%= form_with(model: @entity, url: { action: "create" }, html: { class: 'new-transaction flex flex-col text-slate-600' }) do |f| %>
+    <div class="flex">
+      <%= f.label :group_id, class: "hidden" %>
+      <%= f.collection_select :group_id, Group.all, :id, :name, prompt: "Select a Category"%>
+    </div>
+    <hr>
+    <div>
+      <%= f.label :name, class: "hidden"  %>
+      <%= f.text_field :name, placeholder: 'Name', class: "border-none w-full"%>
+    </div>
+    <hr>
+    <div>
+      <%= f.label :amount, class: "hidden" %>
+      <%= f.text_field :amount,placeholder: 'amount $' ,class: "border-none w-full" %>
+    </div>
+    <hr>
+    <div class=" container flex justify-between text-slate-600 px-4">
+      <%= link_to '❮', :back, class: 'btn hover:text-black' %>
+      <%= f.submit "Save", class: 'btn hover:text-black font-bold' %>
+    </div>
+  <%end%>
+</div>
+</div>
+
