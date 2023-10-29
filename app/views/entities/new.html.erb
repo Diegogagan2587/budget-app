@@ -3,7 +3,7 @@
   <%= form_with(model: @entity, url: { action: "create" }, html: { class: 'new-transaction flex flex-col text-slate-600' }) do |f| %>
     <div class="flex">
       <%= f.label :group_id, class: "hidden" %>
-      <%= f.collection_select :group_id, Group.all, :id, :name, prompt: "Select a Category"%>
+      <%= f.collection_select :group_id, @user.groups, :id, :name, prompt: "Select a Category"%>
     </div>
     <hr>
     <div>
