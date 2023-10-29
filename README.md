@@ -35,6 +35,11 @@
 
 **Budget App** is a  server side rendered application following MVC architecture, where you can manage your budget: You have a list of transactions associated with a category, so that you can see how much money you spent on what.
 
+[Watch a brief introduction here](https://youtu.be/UutIRd4KRIQ)
+
+![Alt text](image.png)
+
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
