@@ -1,11 +1,11 @@
-<div class="container flex flex-col gap-3 items-center px-5">
-  <h1 class="text-5xl text-center">Budget app</h1>
+<div class="container flex flex-col gap-3 items-center px-5 max-w-4xl mx-auto pt-8">
+  <h1 class="text-3xl sm:text-4xl md:text-5xl text-center">Budget app</h1>
   <% if user_signed_in? %>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-  <%else%>
-    <div class="flex gap-5 justify-center mt-5 p-5  w-full">
-      <%= link_to "Login", new_user_session_path, class: "btn hover:border hover:shadow hover:bg-slate-200 p-1 flex-1 text-center" %>
-      <%= link_to "Register", new_user_registration_path, class: "btn hover:border hover:shadow hover:bg-slate-200 p-1 flex-1 text-center" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary py-3 w-full sm:w-auto" %>
+  <% else %>
+    <div class="flex flex-col gap-3 mt-5 p-4 w-full sm:flex-row sm:gap-5">
+      <%= link_to "Login", new_user_session_path, class: "btn hover:border hover:shadow hover:bg-slate-200 py-3 w-full sm:w-auto flex-1 text-center" %>
+      <%= link_to "Register", new_user_registration_path, class: "btn hover:border hover:shadow hover:bg-slate-200 py-3 w-full sm:w-auto flex-1 text-center" %>
     </div>
   <% end %>
-  <div>
+</div>
