@@ -1,27 +1,27 @@
-<div class="container w-full px-5 flex flex-col items-center gap-5">
-  <h2 class="text-3xl">Log in</h2>
-  <div class="container border p-2 shadow bg-white">
+<div class="container w-full max-w-md px-5 flex flex-col items-center gap-5 mx-auto pt-4">
+  <h2 class="text-xl sm:text-2xl md:text-3xl">Log in</h2>
+  <div class="container border p-5 shadow bg-white w-full">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html:{ class: 'flex flex-col gap-5' }) do |f| %>
       <div class="field">
-        <%= f.label :email, class: "hidden"%>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "email", class: "border-none w-full bg-white" %>
+        <%= f.label :email, class: "hidden" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "border w-full bg-white p-3 rounded-md text-sm sm:text-base" %>
       </div>
-      <hr>
+      <hr class="border-t border-gray-200 my-3">
       <div class="field">
-        <%= f.label :password,class: "hidden" %><br />
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "password", class: "border-none w-full" %>
+        <%= f.label :password, class: "hidden" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "border w-full p-3 rounded-md text-sm sm:text-base" %>
       </div>
-      <hr>
+      <hr class="border-t border-gray-200 my-3">
       <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, class: "text-slate-600"%>
+        <div class="field flex items-center gap-2">
+          <%= f.check_box :remember_me, class: "w-4 h-4" %>
+          <%= f.label :remember_me, class: "text-slate-600 text-sm" %>
         </div>
       <% end %>
-      <div class="actions flex justify-evenly ">
-        <%= f.submit "Log in", class: "hover:border hover:shadow hover:bg-slate-200 p-1 flex-1 text-center text-slate-600" %>
+      <div class="actions flex flex-col gap-3 sm:flex-row justify-between w-full">
+        <%= f.submit "Log in", class: "hover:border hover:shadow hover:bg-slate-200 py-2 px-4 rounded-md bg-gray-100 text-slate-600 w-full sm:w-auto" %>
       </div>
     <% end %>
   </div>
-  <%= render "devise/shared/links" %>
+  <%= render "devise/shared/links", class: "text-center text-sm sm:text-base mt-5" %>
 </div>
