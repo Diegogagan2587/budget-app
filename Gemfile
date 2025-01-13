@@ -52,6 +52,7 @@ group :development, :test do
   gem 'capybara'
   gem 'debug', platforms: %i[mri windows]
   gem 'rspec-rails', '~> 6.0.0'
+  gem 'rspec-support', '3.13.1'
 end
 
 group :development do
