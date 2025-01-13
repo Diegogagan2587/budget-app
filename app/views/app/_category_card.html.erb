@@ -1,16 +1,16 @@
-<div id="category-card" class="border rounded p-2 bg-white w-full">
-  <a href="<%=group_path(category)%>">
-    <div class="container flex justify-between">
-      <div class="flex gap-3 items-center">
-        <ion-icon name="<%=category.icon%>" class="text-6xl"></ion-icon>
+<div id="category-card" class="border rounded p-4 bg-white w-full shadow hover:shadow-md transition-shadow duration-300">
+  <a href="<%= group_path(category) %>">
+    <div class="container flex flex-col sm:flex-row justify-between gap-4">
+      <div class="flex gap-4 items-center">
+        <ion-icon name="<%= category.icon %>" class="text-5xl"></ion-icon>
         <div class="card-body">
-          <h5 class="card-title text-slate-500 font-bold"><%= category.name %></h5>
-          <p class="card-text text-slate-400">transactions: <%= category.transactions_counter %></p>
+          <h5 class="card-title text-slate-700 font-bold text-lg"><%= category.name %></h5>
+          <p class="card-text text-slate-500 text-sm">Transactions: <%= category.transactions_counter %></p>
         </div>
       </div>
-      <div class="flex w-1/4 items-center">
-        <p class="card-text">Total: $</p>
-        <span><%=total_amount%></span>
+      <div class="flex sm:w-1/4 items-center justify-end gap-2 text-right">
+        <p class="card-text font-medium">Total: $</p>
+        <span class="text-lg font-bold"><%= total_amount %></span>
       </div>
     </div>
   </a>
